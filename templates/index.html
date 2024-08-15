@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympic Data Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Olympic Data Visualization</h1>
+
+    <div class="plot">
+        <h2>Male and Female Participation in Olympics</h2>
+        <img src="{{ url_for('static', filename='plots/participation_by_gender.png') }}" alt="Male and Female Participation">
+    </div>
+
+    <div class="plot">
+        <h2>Medals by Country in Each Continent</h2>
+        <!-- Display plots for each continent -->
+        {% for continent in ["africa", "asia", "europe", "north_america", "oceania", "south_america"] %}
+            <img src="{{ url_for('static', filename='plots/medals_by_country_' ~ continent ~ '.png') }}" alt="Medals by Country in {{ continent.capitalize() }}">
+        {% endfor %}
+    </div>
+
+    <div class="plot">
+        <h2>Age Distribution by Gender</h2>
+        <img src="{{ url_for('static', filename='plots/age_distribution_by_gender.png') }}" alt="Age Distribution by Gender">
+    </div>
+
+    <div class="plot">
+        <h2>Top 5 Events for Men Based on Medal Count</h2>
+        <img src="{{ url_for('static', filename='plots/top_5_events_men.png') }}" alt="Top 5 Events for Men">
+    </div>
+
+    <div class="plot">
+        <h2>Top 5 Events for Women Based on Medal Count</h2>
+        <img src="{{ url_for('static', filename='plots/top_5_events_women.png') }}" alt="Top 5 Events for Women">
+    </div>
+
+</body>
+</html>
