@@ -1,5 +1,6 @@
 # Olympics 2024
 Analysis of Olympics 2024
+get the CSV file from: https://www.kaggle.com/datasets/piterfm/paris-2024-olympic-summer-games
 
 <!-- Image 1 -->
 <p align="center">
